@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import Home from "../pages/Home";
 import Profile from "../pages/Profile";
@@ -6,7 +6,7 @@ import About from "../pages/About";
 
 const AppRoutes = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
@@ -15,7 +15,7 @@ const AppRoutes = () => {
         </Route>
         <Route path="/login" element={<>Login Page</>} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
