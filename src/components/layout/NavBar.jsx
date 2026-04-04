@@ -1,3 +1,4 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
@@ -6,9 +7,9 @@ const NavBar = () => {
 
   return (
     <div className="bg-white shadow ">
-      <div className="container mx-auto p-5 ">
+      <div className="container p-5 mx-auto ">
         
-        <nav className="space-x-6  ">
+        <nav className="space-x-6 ">
           <NavLink to="/" end className={linkClass}>
             Home
           </NavLink>

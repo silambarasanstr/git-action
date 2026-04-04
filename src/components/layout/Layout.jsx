@@ -1,3 +1,4 @@
+import React from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import NavBar from "./NavBar";
@@ -8,7 +9,7 @@ const Layout = () => {
     <>
       <Header />
       <NavBar />
-      <main className="p-5 container mx-auto">
+      <main className="container p-5 mx-auto">
         <Outlet />
       </main>
       <Footer />

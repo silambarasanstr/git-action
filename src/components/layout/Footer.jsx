@@ -1,6 +1,7 @@
+import React from "react";
 const Footer = () => {
   return (
-    <footer className="py-3 bg-gray-200  container mx-auto p-5">
+    <footer className="container p-5 py-3 mx-auto bg-gray-200">
       <p className="text-sm">© 2026 My App</p>
     </footer>
   );
