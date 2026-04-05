@@ -9,7 +9,7 @@ const Layout = () => {
     <>
       <Header />
       <NavBar />
-      <main className="container p-5 mx-auto">
+      <main className="container p-5 mx-auto h-screen">
         <Outlet />
       </main>
       <Footer />
