@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/React_Vite_CICD/",
+  base: "/React_Vite_CICD/", // <-- comma venum
   server: {
     open: true,
     port: 3000,
