@@ -1,7 +1,7 @@
 import React from "react";
 
 const Home = () => {
-  return <div>STR Welcome</div>;
+  return <div>React_Docker_CICD_Github simbu</div>;
 };
 
 export default Home;
