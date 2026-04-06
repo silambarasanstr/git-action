@@ -5,7 +5,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <h4>git-action</h4>
+      <h4>git-action simbube2013@gmail.com</h4>
       <p>
         React js + Vite + Tailwind CSS + DaisyUI + React Router + React Query +
         React Hook Form + Zod + Axios + Prettier + Eslint + Husky + Lint Staged
