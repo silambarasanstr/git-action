@@ -5,6 +5,7 @@ import "./App.css";
 function App() {
   return (
     <>
+      <h1>git-action</h1>
       React js + Vite + Tailwind CSS + DaisyUI + React Router + React Query +
       React Hook Form + Zod + Axios + Prettier + Eslint + Husky + Lint Staged +
       Commitlint + EditorConfig + Vite Plugin PWA + Vite Plugin SVGR + Vite
