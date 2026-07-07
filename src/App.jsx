@@ -1,20 +1,25 @@
-import { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
-import "./App.css";
+import Layout from "./Layout/Layout";
+import Home from "./pages/Home";
+import Templates from "./pages/Templates";
 
 function App() {
   return (
-    <>
-      <h4>git-action simbube2013@gmail.com</h4>
-      <p>
-        React js + Vite + Tailwind CSS + DaisyUI + React Router + React Query +
-        React Hook Form + Zod + Axios + Prettier + Eslint + Husky + Lint Staged
-        + Commitlint + EditorConfig + Vite Plugin PWA + Vite Plugin SVGR + Vite
-        Plugin Compression + Vite Plugin Image Minify + Vite Plugin Bundle
-        Analyzer + Vite Plugin Env Compatible + Vite Plugin HTML + Vite Plugin
-        Legacy + Vite Plugin React Refresh + Vite Plugin TypeScript Checker
-      </p>
-    </>
+    <Router basename="/git-action">
+      <div className="App">
+        <Routes>
+          <Route element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="templates" element={<Templates />} />
+          </Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
