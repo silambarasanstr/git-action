@@ -2,7 +2,7 @@ import React from 'react'
 
 const Templates = () => {
   return (
-    <div>
+    <div className="p-4">
        Templates
     </div>
   )

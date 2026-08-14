@@ -4,20 +4,32 @@ import { getProducts } from "../services/productService";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await getProducts();
-      setProducts(response.data);
+      try {
+        const response = await getProducts();
+        setProducts(response.data || []);
+      } catch (error) {
+        console.error("Failed to fetch products:", error);
+        setProducts([]);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchProducts();
   }, []);
 
+  const validProducts = products.filter(
+    (product) => product?.id && product?.title ,
+  );
+
   return (
     <div>
       <section className="bg-[#1550b7] py-20">
-        <div className="max-w-7xl mx-auto px-6 ">
+        <div className="max-w-7xl mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-bold text-white">
             Welcome to Themes
           </h1>
@@ -45,13 +57,26 @@ const Home = () => {
             Explore our most popular premium templates.
           </p>
 
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {products
-              .filter((product) => product?.id && product?.title)
-              .map((product) => (
+          {loading ? (
+            <div className="mt-10 flex justify-center items-center py-16">
+              <div className="w-10 h-10 border-4 border-slate-200 border-t-[#1550b7] rounded-full animate-spin" />
+            </div>
+          ) : validProducts.length === 0 ? (
+            <div className="mt-10 text-center py-16">
+              <p className="text-lg font-medium text-slate-600">
+                No products found
+              </p>
+              <p className="mt-2 text-sm text-slate-400">
+                There are no products available at the moment.
+              </p>
+            </div>
+          ) : (
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {validProducts.map((product) => (
                 <ProductCard key={product.id} {...product} />
               ))}
-          </div>
+            </div>
+          )}
         </div>
       </section>
     </div>
