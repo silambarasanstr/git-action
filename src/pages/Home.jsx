@@ -7,23 +7,35 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Products-ஐ API-லிருந்து எடுக்கிற function
     const fetchProducts = async () => {
       try {
+        // API response வரும் வரை wait செய்
         const response = await getProducts();
+
+        // Data இருந்தால் products-ல் வை
+        // Data இல்லையென்றால் empty array வை
         setProducts(response.data || []);
       } catch (error) {
-        console.error("Failed to fetch products:", error);
+        // API error வந்தால்
+        console.error("Products எடுக்க முடியவில்லை:", error);
+
+        // Products-ஐ empty array-ஆக வை
         setProducts([]);
       } finally {
+        // API call முடிந்துவிட்டது
         setLoading(false);
       }
     };
 
+    // Function-ஐ call செய்
     fetchProducts();
+
+    // Component முதலில் load ஆகும்போது மட்டும் run ஆகும்
   }, []);
 
   const validProducts = products.filter(
-    (product) => product?.id && product?.title ,
+    (product) => product?.id && product?.title,
   );
 
   return (

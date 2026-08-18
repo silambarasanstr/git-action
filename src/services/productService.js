@@ -5,3 +5,11 @@ export const getProducts = async () => {
     data: products,
   });
 };
+
+export const getProductsId = async (id) => {
+  const product = products.find((p) => p.id === Number(id));
+
+  return Promise.resolve({
+    data: product || null,
+  });
+};

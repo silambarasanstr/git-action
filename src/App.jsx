@@ -1,12 +1,9 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Layout from "./Layout/Layout";
 import Home from "./pages/Home";
 import Templates from "./pages/Templates";
+import TemplatesDetails from "./pages/TemplatesDetails";
 
 function App() {
   return (
@@ -16,6 +13,7 @@ function App() {
           <Route element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="templates" element={<Templates />} />
+            <Route path="templates/:id" element={<TemplatesDetails />} />
           </Route>
         </Routes>
       </div>
