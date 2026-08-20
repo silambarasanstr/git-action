@@ -9,11 +9,9 @@ const Accordion = ({ title, children, defaultOpen = false }) => {
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className="w-full flex items-center justify-between px-4 py-3 text-left hover:bg-slate-50 transition"
+        className="w-full flex items-center justify-between px-4 py-3 text-left   cursor-pointer bg-gray-200"
       >
-        <span className="text-sm font-semibold text-slate-800">
-          {title}
-        </span>
+        <span className="text-sm font-semibold text-slate-800">{title}</span>
 
         <ChevronDown
           size={17}
@@ -24,9 +22,7 @@ const Accordion = ({ title, children, defaultOpen = false }) => {
       </button>
 
       {isOpen && (
-        <div className="border-t border-slate-200 p-4">
-          {children}
-        </div>
+        <div className="border-t border-slate-200 p-4">{children}</div>
       )}
     </div>
   );

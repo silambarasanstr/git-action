@@ -131,6 +131,56 @@ const TemplatesDetails = () => {
           </section>
         )}
 
+
+       {/* ==================== FRONTEND / BACKEND ==================== */}
+      {(product.frontEnd || product.backEnd) && (
+        <section className="max-w-7xl mx-auto px-4 py-2">
+          <Accordion title="Frontend & Backend">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {/* Frontend */}
+              {product.frontEnd && (
+                <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-lg p-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center text-xs font-bold">
+                      FE
+                    </div>
+
+                    <h3 className="text-base font-semibold text-blue-800">
+                      Frontend
+                    </h3>
+                  </div>
+
+                  <p className="mt-2 text-xs text-slate-600 leading-5">
+                    {product.frontEnd}
+                  </p>
+                </div>
+              )}
+
+              {/* Backend */}
+              {product.backEnd && (
+                <div className="bg-gradient-to-br from-emerald-50 to-white border border-emerald-100 rounded-lg p-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-xs font-bold">
+                      BE
+                    </div>
+
+                    <h3 className="text-base font-semibold text-emerald-800">
+                      Backend
+                    </h3>
+                  </div>
+
+                  <p className="mt-2 text-xs text-slate-600 leading-5">
+                    {product.backEnd}
+                  </p>
+                </div>
+              )}
+            </div>
+          </Accordion>
+        </section>
+      )}
+
+
+
       {/* ==================== FEATURES ==================== */}
       {Array.isArray(product.features) && product.features.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 py-2">
@@ -194,7 +244,7 @@ const TemplatesDetails = () => {
       {/* ==================== FOLDER STRUCTURE ==================== */}
       {product.folderStructure && (
         <section className="max-w-7xl mx-auto px-4 py-2">
-          <Accordion title="Project Folder Structure" defaultOpen={true}>
+          <Accordion title="Project Folder Structure" >
             <div className="bg-slate-950 border border-slate-800 text-emerald-300 rounded-lg p-4 overflow-x-auto">
               <pre className="text-xs leading-5">
                 <code>{product.folderStructure}</code>
@@ -204,77 +254,9 @@ const TemplatesDetails = () => {
         </section>
       )}
 
-      {/* ==================== APPLICATION FLOW ==================== */}
-      {Array.isArray(product.applicationFlow) &&
-        product.applicationFlow.length > 0 && (
-          <section className="max-w-7xl mx-auto px-4 py-2">
-            <Accordion title="Application Flow">
-              <div className="space-y-2">
-                {product.applicationFlow.map((step, index) => (
-                  <div
-                    key={`${step}-${index}`}
-                    className="flex items-start gap-3 p-2 rounded-lg hover:bg-orange-50 transition"
-                  >
-                    <span className="shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-orange-500 to-red-500 text-white text-xs font-semibold flex items-center justify-center shadow-sm">
-                      {index + 1}
-                    </span>
+    
 
-                    <p className="text-xs text-slate-700 pt-1 leading-5">
-                      {step}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </Accordion>
-          </section>
-        )}
-
-      {/* ==================== FRONTEND / BACKEND ==================== */}
-      {(product.frontEnd || product.backEnd) && (
-        <section className="max-w-7xl mx-auto px-4 py-2">
-          <Accordion title="Frontend & Backend">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {/* Frontend */}
-              {product.frontEnd && (
-                <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-lg p-4">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center text-xs font-bold">
-                      FE
-                    </div>
-
-                    <h3 className="text-base font-semibold text-blue-800">
-                      Frontend
-                    </h3>
-                  </div>
-
-                  <p className="mt-2 text-xs text-slate-600 leading-5">
-                    {product.frontEnd}
-                  </p>
-                </div>
-              )}
-
-              {/* Backend */}
-              {product.backEnd && (
-                <div className="bg-gradient-to-br from-emerald-50 to-white border border-emerald-100 rounded-lg p-4">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-xs font-bold">
-                      BE
-                    </div>
-
-                    <h3 className="text-base font-semibold text-emerald-800">
-                      Backend
-                    </h3>
-                  </div>
-
-                  <p className="mt-2 text-xs text-slate-600 leading-5">
-                    {product.backEnd}
-                  </p>
-                </div>
-              )}
-            </div>
-          </Accordion>
-        </section>
-      )}
+     
 
       {/* ==================== INSTALLATION ==================== */}
       {Array.isArray(product.installation) &&

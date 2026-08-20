@@ -23,10 +23,6 @@ const products = [
 
     projectType: "Full Stack E-commerce Application",
 
-    role: "Full Stack Developer",
-
-    projectDuration: "3 Months",
-
     // =========================
     // Technologies
     // =========================
@@ -177,25 +173,6 @@ const products = [
 ├── App.jsx
 └── main.jsx`,
 
-    
-
-    // =========================
-    // Application Flow
-    // =========================
-
-    applicationFlow: [
-      "User opens the e-commerce website.",
-      "Home page displays products and categories.",
-      "User navigates to Products page.",
-      "Products are loaded from the product service.",
-      "User selects a product.",
-      "React Router navigates to /products/:id.",
-      "ProductDetails gets the ID using useParams().",
-      "Product service finds the matching product.",
-      "Complete product information is displayed dynamically.",
-      "User can navigate to other pages such as Cart, Checkout and Orders.",
-    ],
-
     // =========================
     // Installation
     // =========================
@@ -222,10 +199,6 @@ const products = [
       "Aura Shop is an e-commerce application with customer shopping functionality and an administration module for managing products and orders.",
 
     projectType: "E-commerce with Admin Dashboard",
-
-    role: "Frontend Developer",
-
-    projectDuration: "2 Months",
 
     technologies: [
       "React",
@@ -301,36 +274,6 @@ const products = [
 │   └── slices/
 │
 └── App.jsx`,
-
-    architecture: [
-      {
-        title: "Frontend",
-        description:
-          "React is used to build reusable and maintainable user interfaces.",
-      },
-      {
-        title: "State Management",
-        description: "Redux Toolkit is used for global application state.",
-      },
-      {
-        title: "Backend",
-        description: "Node.js and Express.js provide REST APIs.",
-      },
-      {
-        title: "Database",
-        description: "MongoDB stores users, products and order information.",
-      },
-    ],
-
-    applicationFlow: [
-      "User visits the application.",
-      "Products are loaded from the backend.",
-      "User selects a product.",
-      "Product details are displayed.",
-      "User adds products to cart.",
-      "User proceeds to checkout.",
-      "Order is created and stored.",
-    ],
 
     installation: ["yarn install", "yarn dev"],
   },
